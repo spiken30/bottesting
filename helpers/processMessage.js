@@ -6,14 +6,14 @@ const request = require('request');
 module.exports = (event) => {
     console.log(event);
     const senderId = event.sender.id;
-    const message = event.message.text;
+    const message = event.message.text.toUpperCase();
     var msg = "no entiendo lo que dices amigo";
 
-    if (message.includes("Hola") || message.includes("hola"))
+    if (message.includes("HOLA"))
       msg = "Hola como te va amigo? que puedo hacer por ti";
 
-    if (message.includes("adios") || message.includes("Adios"))
-      msg = "Adios perro !";
+    if (message.includes("ADIOS"))
+      msg = "Adios amigo !";
 
 
 
