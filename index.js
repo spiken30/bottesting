@@ -6,8 +6,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(process.env.PORT || 3000, () => console.log('Webhook server is listening, port 3000'));
-const verificationController = require('./controllers/verification');
-const messageWebhookController = require('./controllers/messageWebhook');
+//const verificationController = require('./controllers/verification');
+//const messageWebhookController = require('./controllers/messageWebhook');
 
 app.get('/', function (req,res) {
   const hubChallenge = req.query['hub.challenge'];
@@ -21,4 +21,4 @@ app.get('/', function (req,res) {
   res.status(403).end();
   }
 });
-app.post('/', messageWebhookController);
+//app.post('/', messageWebhookController);
