@@ -15,7 +15,6 @@ module.exports = (event) => {
         json: {
             recipient: { id: senderId },
             message: "Holi crayoli"
-            }
         }
     });
 };
