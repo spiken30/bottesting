@@ -9,10 +9,10 @@ module.exports = (event) => {
     const message = event.message.text;
     var msg = "no entiendo lo que dices amigo";
 
-    if (messsage.includes("Hola") || messsage.includes("hola"))
+    if (message.includes("Hola") || message.includes("hola"))
       msg = "Hola como te va amigo? que puedo hacer por ti";
 
-    if (messsage.includes("adios") || messsage.includes("Adios"))
+    if (message.includes("adios") || message.includes("Adios"))
       msg = "Adios perro !";
 
 
