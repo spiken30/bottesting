@@ -14,11 +14,7 @@ module.exports = (event) => {
         method: 'POST',
         json: {
             recipient: { id: senderId },
-            message: {
-                attachment: {
-                    type: 'image',
-                    payload: { url: CAT_IMAGE_URL}
-                }
+            message: "Holi crayoli"
             }
         }
     });
