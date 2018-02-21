@@ -9,5 +9,16 @@ app.listen(process.env.PORT || 3000, () => console.log('Webhook server is listen
 const verificationController = require('./controllers/verification');
 const messageWebhookController = require('./controllers/messageWebhook');
 
-app.get('/', verificationController);
+app.get('/', function (req,res) {
+  const hubChallenge = req.query['hub.challenge'];
+
+ const hubMode = req.query['hub.mode'];
+  const verifyTokenMatches = (req.query['hub.verify_token'] === 'Bottesting');
+
+ if (hubMode && verifyTokenMatches) {
+  res.status(200).send(hubChallenge);
+  } else {
+  res.status(403).end();
+  }
+});
 app.post('/', messageWebhookController);
