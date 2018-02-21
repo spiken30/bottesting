@@ -1,4 +1,4 @@
-//const processMessage = require('../helpers/processMessage');
+const processMessage = require('../helpers/processMessage');
 
 module.exports = (req, res) => {
   console.log(req);
@@ -7,6 +7,7 @@ module.exports = (req, res) => {
       entry.messaging.forEach(event => {
         if (event.message && event.message.text) {
           console.log(event.message.text);
+          processMessage(event);
         }
       });
     });
