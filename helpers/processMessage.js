@@ -14,7 +14,15 @@ module.exports = (event) => {
         method: 'POST',
         json: {
             recipient: { id: senderId },
-            message: "Holi crayoli"
+            message: {
+                text: "Tal vez el dantito es joto"
+            }
+            //message: {
+            //    attachment: {
+            //        type: 'image',
+            //        payload: { url: CAT_IMAGE_URL}
+            //    }
+            //}
         }
     });
 };
