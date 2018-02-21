@@ -21,4 +21,4 @@ app.get('/', function (req,res) {
   res.status(403).end();
   }
 });
-//app.post('/', messageWebhookController);
+app.post('/', messageWebhookController);
