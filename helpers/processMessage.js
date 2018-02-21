@@ -4,6 +4,7 @@ const CAT_IMAGE_URL = 'http://botcube.co/public/blog/apiai-tutorial-bot/hosico_c
 const request = require('request');
 
 module.exports = (event) => {
+    console.log(event);
     const senderId = event.sender.id;
     const message = event.message.text;
 
