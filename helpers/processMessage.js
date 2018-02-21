@@ -1,5 +1,5 @@
 const FACEBOOK_ACCESS_TOKEN = process.env.FBTOKEN || '';
-const CAT_IMAGE_URL = 'https://botcube.co/public/blog/apiai-tutorial-bot/hosico_cat.jpg';
+const CAT_IMAGE_URL = 'http://botcube.co/public/blog/apiai-tutorial-bot/hosico_cat.jpg';
 
 const request = require('request');
 
