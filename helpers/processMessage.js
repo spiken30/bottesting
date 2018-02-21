@@ -7,6 +7,15 @@ module.exports = (event) => {
     console.log(event);
     const senderId = event.sender.id;
     const message = event.message.text;
+    var msg = "no entiendo lo que dices amigo";
+
+    if (messsage.includes("Hola") || messsage.includes("hola"))
+      msg = "Hola como te va amigo? que puedo hacer por ti";
+
+    if (messsage.includes("adios") || messsage.includes("Adios"))
+      msg = "Adios perro !";
+
+
 
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -15,7 +24,7 @@ module.exports = (event) => {
         json: {
             recipient: { id: senderId },
             message: {
-                text: "Tal vez el dantito es joto"
+                text: msg
             }
             //message: {
             //    attachment: {
