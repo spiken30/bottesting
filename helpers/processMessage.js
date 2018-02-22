@@ -23,16 +23,15 @@ function sendMessage(senderId,message)
 }
 
 module.exports = (event) => {
-  console.log(event);
   const senderId = event.sender.id;
   const message = event.message.text.toUpperCase();
   var msg = "no entiendo lo que dices amigo";
 
   if (message.includes("HOLA"))
-  msg = "Hola como te va amigo? que puedo hacer por ti";
+    msg = "Hola como te va amigo? que puedo hacer por ti";
 
   if (message.includes("ADIOS"))
-  msg = "Adios amigo !";
+    msg = "Adios amigo !";
 
   request({
     url: "https://graph.facebook.com/v2.6/" + senderId,
@@ -50,7 +49,7 @@ module.exports = (event) => {
         name = bodyObj.first_name;
         greeting = "Hi " + name + ". ";
       }
-      var message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about?";
+      var message = greeting + "Hola soy javitoooossss";
       sendMessage(senderId, {text: message});
   });
 };
