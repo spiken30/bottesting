@@ -13,7 +13,7 @@ app.get('/', function (req,res) {
   const hubChallenge = req.query['hub.challenge'];
 
  const hubMode = req.query['hub.mode'];
-  const verifyTokenMatches = (req.query['hub.verify_token'] === 'Bottesting');
+  const verifyTokenMatches = (req.query['hub.verify_token'] === (process.env.VERIFY_TOKEN || 'Bottesting'));
 
  if (hubMode && verifyTokenMatches) {
   res.status(200).send(hubChallenge);
