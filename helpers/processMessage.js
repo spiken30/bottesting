@@ -12,10 +12,13 @@ function sendMessage(senderId,name,message)
     msg = "Hola " + name + " como te va? que puedo hacer por ti.";
 
   if (message.includes("SERVICIOS"))
-    msg = name + "nuestros servicios incluyen: Marketing, Social Media, entre otros";
+    msg = name + " nuestros servicios incluyen: Marketing, Social Media, entre otros";
 
   if (message.includes("CONTACTO"))
     msg = name + " por favor llamanos al 01 800 123 123 123 o escribenos a himkt@himkt.com";
+
+  if (message.includes("GUAPO"))
+    msg = "tu tambien " + name;
 
   if (message.includes("ADIOS"))
     msg = "Adios " + name + " !";
