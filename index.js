@@ -12,7 +12,7 @@ MongoClient.connect(url, function (err, database) {
         console.log(err);
         process.exit(1);
     }
-    db = database;
+    db = database.client(process.env.MONGODB);
     console.log('Database Connected');
 });
 
@@ -52,7 +52,7 @@ app.get('/ai', function (req,res) {
 
 
 app.post('/ai', function (req,res) {
-  dbo.collection("ai").save(req.body, function(err, res) {
+  db.collection("ai").save(req.body, function(err, res) {
     if (err) throw err;
     console.log("1 document inserted");
     db.close();
