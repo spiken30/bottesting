@@ -12,7 +12,7 @@ MongoClient.connect(url, function (err, database) {
         console.log(err);
         process.exit(1);
     }
-    db = database.client(process.env.MONGODB);
+    db = database.db(process.env.MONGODB);
     console.log('Database Connected');
 });
 
