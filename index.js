@@ -55,7 +55,6 @@ app.post('/ai', function (req,res) {
   db.collection("ai").save(req.body, function(err, res) {
     if (err) throw err;
     console.log("1 document inserted");
-    db.close();
   });
 });
 
